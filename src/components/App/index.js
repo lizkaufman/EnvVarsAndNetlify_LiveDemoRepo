@@ -9,7 +9,7 @@ function App() {
   }, []);
 
   async function fetchQuote() {
-    const res = await fetch("https://api.kanye.rest");
+    const res = await fetch(`${process.env.REACT_APP_API_URL}`);
     const data = await res.json();
     setQuote(data.quote);
   }
